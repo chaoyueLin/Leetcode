@@ -1,5 +1,5 @@
 # 回溯
-回溯就是全排列
+回溯就是全排列,就是深度优先遍历DFS
 
 	result = []
 	def backtrack(路径, 选择列表):
@@ -114,6 +114,87 @@
             backtrack(nums, track);
             // 取消选择
             track.removeLast();
+        }
+    }
+    
+子集,leetcode第78题
+
+    class Solution {
+
+        List<List<Integer>> res=new LinkedList<>();
+        public List<List<Integer>> subsets(int[] nums) {
+            LinkedList<Integer> track=new LinkedList<>();
+            backTrack(track,nums,0);
+            return res;
+        }
+        
+        public void backTrack(LinkedList<Integer> track,int[] nums,int start){
+            res.add(new ArrayList<>(track));
+            for(int i=start;i<nums.length;i++){
+                track.add(nums[i]);
+                backTrack(track,nums,i+1);
+                track.removeLast();
+            }
+            
+        }
+    }
+    
+    
+组合,leetcode第77题
+
+    class Solution {
+        List<List<Integer>> res=new ArrayList<>();
+        public List<List<Integer>> combine(int n, int k) {
+            if(n<=0|| k<=0){
+                return res;
+            }
+            LinkedList<Integer> track=new LinkedList<>();
+            backTrack(track,1,n,k);
+            return res;
+        }
+        public void backTrack(LinkedList<Integer> track,int start,int n,int k){
+            if(track.size()==k){
+                res.add(new LinkedList<Integer>(track));
+                return;
+            }
+            for(int i=start;i<=n;i++){
+                track.add(i);
+                backTrack(track,i+1,n,k);
+                track.removeLast();
+            }
+        }
+    }
+    
+    
+括号生成,leetcode第22题
+
+    class Solution {
+        LinkedList<String> res=new LinkedList<>();
+        public List<String> generateParenthesis(int n) {
+            if(n==0){
+                return res;
+            }
+            StringBuffer track=new StringBuffer();
+            backTrack(track,n,n);
+            return res;
+        }
+        public void backTrack(StringBuffer track,int left,int right){
+            if(right<left){
+                return;
+            }
+            if(left<0||right<0){
+                return;
+            }
+            if(left==0&&right==0){
+                res.add(track.toString());
+            }
+            track.append("(");
+            backTrack(track,left-1,right);
+            track.deleteCharAt(track.length() - 1);
+
+            track.append(")");
+            backTrack(track,left,right-1);
+            track.deleteCharAt(track.length() - 1);
         }
     }
     
