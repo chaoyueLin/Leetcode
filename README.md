@@ -1,13 +1,26 @@
 # Leetcode
 [知必会](https://github.com/wangzheng0822/algo)
+
 [https://github.com/yuanguangxin/LeetCode](https://github.com/yuanguangxin/LeetCode)
 
-## [二叉树](./二叉树.md)
-## [链表](./链表.md)
-## [回溯](./回溯.md)
-## [BFS（广度优先遍历）](./BFS.md)
-## [动态规划](./动态规划.md)
-## [常用数据结构设计](./常用数据结构设计.md)
+[labuladong](https://labuladong.gitbook.io/algo/)
+
+### [排序](./排序.md)
+### [二叉树](./二叉树.md)
+### [链表](./链表.md)
+### [二分查找](./二分查找.md)
+### [数组](./数组.md)
+### [栈](./栈.md)
+### [滑动窗口](./滑动窗口.md)
+### [回溯(DFS)](./回溯.md)
+### [BFS（广度优先遍历）](./BFS.md)
+### [动态规划](./动态规划.md)
+### [子序列与子串](./子序列与子串.md)
+### [贪心与区间](./贪心与区间.md)
+### [数据结构设计](./数据结构设计.md)
+### [随机与概率](./随机与概率.md)
+### [数学运算技巧](./数学运算技巧.md)
+
 
 ### 字符串相乘
 leetcode第43题
@@ -169,37 +182,3 @@ leetcode第5题
     }
     
     
-### 括号合法性
-leetcode第20题
-
-    class Solution {
-        public boolean isValid(String s) {
-            Stack<Character> stack=new Stack<>();
-            for(char c:s.toCharArray()){
-                if(c=='('||c=='{'||c=='['){
-                    stack.push(c);
-            
-                }else{
-                    if(!stack.isEmpty() && get(c)==stack.peek()){
-                        stack.pop();
-                    }else{
-                        return false;
-                    }
-                    
-                }
-            }
-            return stack.isEmpty();
-        }
-        public Character get(char c){
-            if(c==')'){
-                return '(';
-            }
-            if(c=='}'){
-                return '{';
-            }
-            if(c==']'){
-                return '[';
-            }
-            return ' ';
-        }
-    }
