@@ -181,4 +181,23 @@ leetcode第5题
         }
     }
     
-    
+
+### X的平方根
+leetcode第69题
+
+    public int mySqrt(int x) {
+        int low=0;
+        int high=x;
+        int res=-1;
+        while(low<=high){
+            int mid=(high-low)/2+low;
+            if((long)mid*mid<=x){
+                res=mid;
+                low=mid+1;
+            }else{
+                high=mid-1;
+            }
+        }
+        return res;
+    }   
+
