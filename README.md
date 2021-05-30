@@ -21,7 +21,45 @@
 ### [随机与概率](./随机与概率.md)
 ### [数学运算技巧](./数学运算技巧.md)
 
+### 回文
+leetcode第9题
 
+    public boolean isPalindrome(int x) {
+        if(x<0||(x%10==0&&x!=0)){
+            return false;
+        }
+
+        int reverNumber=0;
+        while(x>reverNumber){
+            reverNumber=reverNumber*10+x%10;
+            x/=10;
+        }
+        return x==reverNumber || x==reverNumber/10;
+    }
+    
+回文字符串,leetcode第125题
+
+    public boolean isPalindrome(String s) {
+        int n=s.length();
+        int left=0;
+        int right=n-1;
+        while(left<right){
+            while(left<right&& !Character.isLetterOrDigit(s.charAt(left))){
+                left++;
+            }
+            while(left<right && !Character.isLetterOrDigit(s.charAt(right))){
+                right--;
+            }
+            if(left<right){
+                if(Character.toLowerCase(s.charAt(left))!=Character.toLowerCase(s.charAt(right))){
+                    return false;
+                }
+                left++;
+                right--;
+            }
+        }
+        return true;
+    }
 ### 字符串相乘
 leetcode第43题
 
