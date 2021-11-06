@@ -28,8 +28,72 @@
             step++;
         }
     }
+
+二叉树按层遍历 leetcode第102题
+
+	class Solution {
+	    public List<List<Integer>> levelOrder(TreeNode root) {
+	        List<List<Integer>> ret = new ArrayList<List<Integer>>();
+	        if (root == null) {
+	            return ret;
+	        }
+	
+	        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+	        queue.offer(root);
+	        while (!queue.isEmpty()) {
+	            List<Integer> level = new ArrayList<Integer>();
+	            int currentLevelSize = queue.size();
+	            for (int i = 1; i <= currentLevelSize; ++i) {
+	                TreeNode node = queue.poll();
+	                level.add(node.val);
+	                if (node.left != null) {
+	                    queue.offer(node.left);
+	                }
+	                if (node.right != null) {
+	                    queue.offer(node.right);
+	                }
+	            }
+	            ret.add(level);
+	        }
+	        
+	        return ret;
+	    }
+	}
+
+二叉树的锯齿形层序遍历 leetcode第103题
+
+	public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+	        List<List<Integer>> res=new LinkedList<>();
+	        if(root==null){
+	            return res;
+	        }
+	        Queue<TreeNode> queue=new LinkedList<>();
+	        queue.offer(root);
+	        boolean flag=true;
+	        while(!queue.isEmpty()){
+	            int size=queue.size();
+	            LinkedList<Integer> level=new LinkedList<>();
+	            for(int i=0;i<size;i++){
+	                TreeNode cur=queue.poll();
+	                if(flag){
+	                    level.offerLast(cur.val);
+	                }else{
+	                    level.offerFirst(cur.val);
+	                }
+	                if(cur.left!=null){
+	                    queue.offer(cur.left);
+	                }
+	                if(cur.right!=null){
+	                    queue.offer(cur.right);
+	                }
+	            }
+	            res.add(new LinkedList<Integer>(level));
+	            flag=!flag;
+	        }
+	        return res;
+	    }
         	
- 二叉树的最小高度 leetcode第111题
+二叉树的最小高度 leetcode第111题
  
          public int minDepth(TreeNode root) {
             if(root ==null){
