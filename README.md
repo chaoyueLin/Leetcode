@@ -1,10 +1,5 @@
 # Leetcode
-[知必会](https://github.com/wangzheng0822/algo)
-
-[https://github.com/yuanguangxin/LeetCode](https://github.com/yuanguangxin/LeetCode)
-
-[labuladong](https://labuladong.gitbook.io/algo/)
-
+[知必会](https://github.com/wangzheng0822/algo),[https://github.com/yuanguangxin/LeetCode](https://github.com/yuanguangxin/LeetCode),[labuladong](https://labuladong.gitbook.io/algo/)
 ### [排序](./排序.md)
 ### [二叉树](./二叉树.md)
 ### [链表](./链表.md)
@@ -20,6 +15,7 @@
 ### [数据结构设计](./数据结构设计.md)
 ### [随机与概率](./随机与概率.md)
 ### [数学运算技巧](./数学运算技巧.md)
+### [算法常见问题](./算法常见问题.md)
 
 ### 回文
 leetcode第9题
