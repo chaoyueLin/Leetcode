@@ -1,5 +1,7 @@
+# 算法
+![](./知必会.png)
 # Leetcode
-[知必会](https://github.com/wangzheng0822/algo),[https://github.com/yuanguangxin/LeetCode](https://github.com/yuanguangxin/LeetCode),[labuladong](https://labuladong.gitbook.io/algo/)
+[知必会](https://github.com/wangzheng0822/algo),[LeetCode](https://github.com/yuanguangxin/LeetCode),[labuladong](https://labuladong.gitbook.io/algo/)
 ### [排序](./排序.md)
 ### [二叉树](./二叉树.md)
 ### [链表](./链表.md)
