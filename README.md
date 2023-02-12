@@ -4,6 +4,7 @@
 [知必会](https://github.com/wangzheng0822/algo),[LeetCode](https://github.com/yuanguangxin/LeetCode),[labuladong](https://labuladong.gitbook.io/algo/)
 ### [排序](./排序.md)
 ### [二叉树](./二叉树.md)
+### [二叉搜索树](./二叉搜索树.md)
 ### [链表](./链表.md)
 ### [二分查找](./二分查找.md)
 ### [数组](./数组.md)
