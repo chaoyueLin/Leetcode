@@ -62,36 +62,30 @@ leetcode第9题
 ### 字符串相乘
 leetcode第43题
 
+
     public String multiply(String num1, String num2) {
-        if(num1.equals("0")|| num2.equals("0")){
-            return "0";
-        }
-        int m=num1.length();
-        int n=num2.length();
-        int[] result=new int[m+n];
-        for(int i=m-1;i>=0;i--){
-            int x=num1.charAt(i) - '0';
-            for(int j=n-1;j>=0;j--){
-                int y=num2.charAt(j) - '0';
-                result[i+j+1]+=x*y;
+        int m = num1.length(), n = num2.length();
+        int[] res = new int[m+n];
+        for(int i = m-1; i >= 0; i--){
+            for(int j = n-1; j >= 0; j--){
+                int sum = (num1.charAt(i)-'0')*(num2.charAt(j)-'0');
+                int p1 = i+j, p2 = i+j+1;
+                sum += res[p2];
+                res[p2] = sum%10;
+                res[p1] += sum/10;
             }
-
         }
-        for(int i=m+n-1;i>0;i--){
-            result[i-1]+=result[i]/10;
-            result[i]%=10;
+        int i = 0;
+        while(i < res.length && res[i] == 0){
+            i++;
         }
-        for(int i=0;i<m+n;i++){
-            System.out.print(result[i]);
+        StringBuilder sb = new StringBuilder();
+        for(;i < res.length; i++){
+            sb.append(res[i]+"");
         }
-        int index=result[0]==0?1:0;
-        StringBuilder sb=new StringBuilder();
-        for(;index<m+n;index++){
-            sb.append(result[index]);
-        }
-        return sb.toString();
-
+        return sb.length() == 0 ? "0" : sb.toString();
     }
+
     
 ### 灯泡开关
 leetcode第319题
